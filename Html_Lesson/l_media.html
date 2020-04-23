@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+<script>
+    /*
+    var c=document.getElementById("myCanvas");
+    var ctx=c.getContext("2d");
+
+    //Create rectangle
+    ctx.fillStyle='#f0f';
+    var rectangle=ctx.fillRect(0,0,50,90);
+
+*/
+    var x=document.getElementById("demo");
+    
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+            x.innerHTML="Geolocation is not supported";
+        }
+    }
+    function showPosition(position) {
+        x.innerHTML="Latitude" + position.coords.latitude +
+        "<br> Longitude" + position.coords.longitude; 
+    }
+    //ErrorCheck
+    
+    function showError(error) {
+        switch(error.code) {
+            case error.PERMISSION_DENIED:
+               x.innerHTML = "User denied the request for Geolocation."
+            break;
+            case error.POSITION_UNAVAILABLE:
+               x.innerHTML = "Location information is unavailable."
+            break;
+            case error.TIMEOUT:
+               x.innerHTML = "The request to get user location timed out."
+            break;
+            case error.UNKNOWN_ERROR:
+               x.innerHTML = "An unknown error occurred."
+            break;
+        }
+    }    
+
+    function showPosition(position) {
+  var latlon = position.coords.latitude + "," + position.coords.longitude;
+
+  var img_url = "https://maps.googleapis.com/maps/api/staticmap?center=" 
+  +latlon+"&zoom=14&size=400x300&sensor=false&key=YOUR_KEY";
+
+  document.getElementById("mapholder").innerHTML = "<img src='"+img_url+"'>";
+}
+</script>
+
+</head>
+<body>
+
+    <article>
+        <div style="align-items: center;padding: 5px; float: center;">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/5BZZGD-bKMg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </article>
+    <nav>
+        <div style="text-align: left;padding-top: 10px; align-content: flex-start;">
+
+            <button onclick="document.location='index.html'" value="Main">Main</button>
+           <!-- <canvas id="myCanvas" width="60px" height="100px" style="border: 1px;grid-auto-flow: row;">
+           </canvas>
+        -->    
+        </div>
+    </nav>
+    <footer >
+        <div >
+            <button onclick="getLocation()">Try</button>
+            <p id="demo"> </p>
+        </div>
+
+    </footer>
+
+</body>
+</html>

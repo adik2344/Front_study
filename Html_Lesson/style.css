@@ -1,0 +1,111 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+header {
+  background-color: #666;
+  padding: 10px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
+
+/* Create two columns/boxes that floats next to each other */
+nav {
+  float: right;
+  width: 30%;
+  height: 300px; /* only for demonstration, should be removed */
+  background: #ccc;
+  padding: 20px;
+}
+
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+article {
+  float: left;
+  padding: 20px;
+  width: 70%;
+  background-color: #f1f1f1;
+  height: 300px; /* only for demonstration, should be removed */
+}
+
+/* Clear floats after the columns */
+section:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the footer */
+footer {
+  background-color: #777;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+@media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
+}
+
+
+
+/*___________________*/
+.nav-main{
+align-items: baseline;
+width: 30%;
+border: 0px;
+background-position: left;
+background-color: #fff;
+}
+.nav-button{
+  width: max-content;
+  height: max-content;
+  background-color: brown;
+}
+body {
+  background-color: rgb(255, 255, 255);
+}
+h1 {
+  color: blue;
+}
+p {
+  color: red;
+}
+a:link, a:visited {
+  color: green;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover, a:active {
+  color: red;
+  background-color: transparent;
+  text-decoration: underline;
+}
+table, th, td {
+  border: none solid black;
+  border-collapse: collapse;
+  text-align:center;
+  padding: 15px;
+}
+ol{
+	list-style-type:"I";
+	padding:2px;
+}
+img{
+		width: 100px
+	}
